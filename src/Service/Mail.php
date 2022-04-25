@@ -7,10 +7,12 @@ use Symfony\Component\Mailer\MailerInterface;
 
 class Mail{
 
+    // un attribut permettant de recuperer le mailerinterface
     private $monmail;
 
     public function __construct(MailerInterface $mail)
     {
+        // on de recuperer le mailerinterface dans l attribut mon mail
         $this->monmail=$mail;
     }
 
@@ -26,11 +28,9 @@ class Mail{
                 ->context([
                     'expiration_date' => new \DateTime('+7 days'),
                     'username' => 'Yoel',
-                    'data' => $data
+                    'data' => $data // envoie des données du tableau de form depuis le parametre de la méthode send
                 ]);
 
-        $this->monmail->send($lemail);
-
-
+        $this->monmail->send($lemail); 
     }
 }
