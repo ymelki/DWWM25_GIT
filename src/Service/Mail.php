@@ -17,11 +17,11 @@ class Mail{
     }
 
 
-    public function send($data){
+    public function send($data, $from){
         
         $lemail=new TemplatedEmail();
-        $lemail->from('admin@example.com')
-                ->to('admin@example.com') 
+        $lemail->from($from)
+                ->to('admin@gmail.com') 
                 ->subject('Time for Symfony Mailer!')
                // path of the Twig template to render
                 ->htmlTemplate('mail/contact.html.twig')

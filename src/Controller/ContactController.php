@@ -30,7 +30,7 @@ class ContactController extends AbstractController
                 $data=$formulaire->getData();
 
                 // Utilisation du service de mail
-                $mail->send($data); 
+                $mail->send($data,$from=$data['email']); 
 
                 // on redirige vers la page envoye.html.twig
                 // avec la variable data['nom']
